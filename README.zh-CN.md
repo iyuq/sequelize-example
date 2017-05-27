@@ -1,5 +1,8 @@
 # sequelize-example
 
+[![build][build]][build-url]
+[![coverage][cover]][cover-url]
+
 The egg example project that uses egg-sequelize plugin.
 
 ## 快速入门
@@ -36,3 +39,7 @@ $ EGG_SERVER_ENV=prod npm start
 
 
 [egg]: https://eggjs.org
+[build]: https://travis-ci.org/iyuq/sequelize-example.svg?branch=master
+[build-url]: https://travis-ci.org/iyuq/sequelize-example
+[cover]: https://codecov.io/gh/iyuq/sequelize-example/branch/master/graph/badge.svg
+[cover-url]: https://codecov.io/gh/iyuq/sequelize-example
