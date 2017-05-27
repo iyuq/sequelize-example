@@ -4,7 +4,10 @@
   "description": "The egg example project that uses egg-sequelize plugin.",
   "private": true,
   "dependencies": {
-    "egg": "^1.2.1"
+    "egg": "^1.2.1",
+    "egg-sequelize": "^2.1.4",
+    "pg": "^6.2.3",
+    "pg-hstore": "^2.3.2"
   },
   "devDependencies": {
     "autod": "^2.8.0",
@@ -14,6 +17,7 @@
     "egg-mock": "^3.5.0",
     "eslint": "^3.19.0",
     "eslint-config-egg": "^4.1.0",
+    "mocha": "^3.4.2",
     "webstorm-disable-index": "^1.1.2"
   },
   "engines": {
