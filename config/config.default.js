@@ -8,5 +8,14 @@ module.exports = appInfo => {
 
   // add your config here
 
+  config.sequelize = {
+    dialect: 'postgres', // support: mysql, mariadb, postgres, mssql
+    database: 'example-dev',
+    host: 'localhost',
+    port: '5432',
+    username: 'postgres',
+    password: 'password',
+  };
+
   return config;
 };
