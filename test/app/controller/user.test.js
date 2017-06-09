@@ -4,7 +4,7 @@ const mock = require('egg-mock');
 const _ = require('lodash');
 const request = require('supertest');
 
-describe.only('test/app/controller/user.test.js', () => {
+describe('test/app/controller/user.test.js', () => {
   let app;
   let ctx;
   before(function* () {

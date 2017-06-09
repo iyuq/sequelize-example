@@ -6,8 +6,8 @@ module.exports = app => {
       const options = {
         offset,
         limit,
-        attributes: [ 'id', 'title', 'created_at', 'updated_at' ],
-        order: [[ 'create_at', 'desc' ]],
+        attributes: [ 'id', 'title', 'user_id', 'created_at', 'updated_at' ],
+        order: [[ 'created_at', 'desc' ]],
       };
       if (user_id) {
         options.where = {
