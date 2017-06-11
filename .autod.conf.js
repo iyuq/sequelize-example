@@ -9,6 +9,8 @@ module.exports = {
     'benchmark',
   ],
   dep: [
+    'pg',
+    'pg-hstore',
   ],
   devdep: [
     'egg-ci',
