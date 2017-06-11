@@ -6,6 +6,7 @@ module.exports = () => {
       yield next;
     } catch (err) {
       // 所有的异常都在 app 上触发一个 error 事件，框架会记录一条错误日志
+      /* istanbul ignore if */
       if (this.app.config.env !== 'unittest') {
         this.app.emit('error', err, this);
       }
