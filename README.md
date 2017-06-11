@@ -11,11 +11,19 @@ The egg example project that uses egg-sequelize plugin.
 
 see [egg docs][egg] for more detail.
 
+### Unittest
+```shell
+$ createdb example-unittest --owner postgres
+$ npm test
+```
+
 ### Development
 ```shell
 $ npm install
+$ createdb example-dev --owner postgres
+$ npm run migrate:up
 $ npm run dev
-$ open http://localhost:7001/news
+$ open http://localhost:7001/users
 ```
 
 ### Deploy
@@ -23,6 +31,8 @@ $ open http://localhost:7001/news
 Use `EGG_SERVER_ENV=prod` to enable prod mode
 
 ```shell
+$ createdb example-prod --owner postgres
+$ NODE_ENV=production npm run migrate:up
 $ EGG_SERVER_ENV=prod npm start
 ```
 

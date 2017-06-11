@@ -11,11 +11,19 @@ The egg example project that uses egg-sequelize plugin.
 
 如需进一步了解，参见 [egg 文档][egg]。
 
+### 单元测试
+```bash
+$ createdb example-unittest --owner postgres
+$ npm test
+```
+
 ### 本地开发
 ```bash
 $ npm install
+$ createdb example-dev --owner postgres
+$ npm run migrate:up
 $ npm run dev
-$ open http://localhost:7001/news
+$ open http://localhost:7001/users
 ```
 
 ### 部署
@@ -23,6 +31,8 @@ $ open http://localhost:7001/news
 线上正式环境用 `EGG_SERVER_ENV=prod` 来启动。
 
 ```bash
+$ createdb example-prod --owner postgres
+$ NODE_ENV=production npm run migrate:up
 $ EGG_SERVER_ENV=prod npm start
 ```
 
