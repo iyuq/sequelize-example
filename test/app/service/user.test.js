@@ -195,7 +195,7 @@ describe('test/app/service/user.test.js', () => {
     });
     it('should throw 404 when id not found', function* () {
       try {
-        yield yield ctx.service.user.update({
+        yield ctx.service.user.update({
           id: 2,
           updates: {
             name: 'update',

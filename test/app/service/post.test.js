@@ -251,6 +251,7 @@ describe('test/app/service/post.test.js', () => {
     it('should update success', function* () {
       const post = yield ctx.service.post.update({
         id: 1,
+        user_id: 1,
         updates: {
           title: 'new title',
           content: 'new content',
@@ -260,10 +261,26 @@ describe('test/app/service/post.test.js', () => {
       assert(post.title === 'new title');
       assert(post.content === 'new content');
     });
+    it('should throw 403 when user_id not the author', function* () {
+      try {
+        yield ctx.service.post.update({
+          id: 1,
+          user_id: 2,
+          updates: {
+            title: 'new title',
+            content: 'new content',
+          },
+        });
+      } catch (error) {
+        assert(error.status === 403);
+        assert(error.message === 'not allowed to modify others post');
+      }
+    });
     it('should throw 404 when id not found', function* () {
       try {
-        yield yield ctx.service.post.update({
+        yield ctx.service.post.update({
           id: 2,
+          user_id: 1,
           updates: {
             title: 'new title',
             content: 'new content',

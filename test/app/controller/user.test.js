@@ -2,7 +2,6 @@
 
 const mock = require('egg-mock');
 const _ = require('lodash');
-const request = require('supertest');
 
 describe('test/app/controller/user.test.js', () => {
   let app;
@@ -108,7 +107,7 @@ describe('test/app/controller/user.test.js', () => {
       mock.restore();
     });
     it('should success', function* () {
-      yield request(app.callback())
+      yield app.httpRequest()
         .get('/users?offset=2&limit=2')
         .expect(200)
         .expect({
@@ -153,7 +152,7 @@ describe('test/app/controller/user.test.js', () => {
       mock.restore();
     });
     it('should success', function* () {
-      yield request(app.callback())
+      yield app.httpRequest()
         .get('/users/1')
         .expect(200)
         .expect({
@@ -165,7 +164,7 @@ describe('test/app/controller/user.test.js', () => {
         });
     });
     it('should throw 404 error when id not exist', function* () {
-      yield request(app.callback())
+      yield app.httpRequest()
         .get('/users/2')
         .expect(404);
     });

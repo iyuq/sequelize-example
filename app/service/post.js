@@ -35,10 +35,13 @@ module.exports = app => {
       return yield this.ctx.model.Post.create(post);
     }
 
-    * update({ id, updates }) {
+    * update({ id, user_id, updates }) {
       const post = yield this.ctx.model.Post.findById(id);
       if (!post) {
         this.ctx.throw(404, 'post not found');
+      }
+      if (post.user_id != user_id) {
+        this.ctx.throw(403, 'not allowed to modify others post');
       }
       return yield post.update(updates);
     }
