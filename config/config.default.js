@@ -6,7 +6,7 @@ module.exports = appInfo => {
   // should change to your own
   config.keys = appInfo.name + '_sequelize-example';
 
-  // add your config here
+  config.middleware = [ 'errorHandler' ];
 
   config.sequelize = {
     dialect: 'postgres', // support: mysql, mariadb, postgres, mssql
