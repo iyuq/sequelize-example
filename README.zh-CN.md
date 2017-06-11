@@ -3,7 +3,7 @@
 [![build][build]][build-url]
 [![coverage][cover]][cover-url]
 
-The egg example project that uses egg-sequelize plugin.
+使用egg-sequelize插件的egg示例项目。
 
 ## 快速入门
 
