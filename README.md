@@ -11,12 +11,6 @@ The egg example project that uses egg-sequelize plugin.
 
 see [egg docs][egg] for more detail.
 
-### Unittest
-```shell
-$ createdb example-unittest --owner postgres
-$ npm test
-```
-
 ### Development
 ```shell
 $ npm install
