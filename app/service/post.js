@@ -40,7 +40,7 @@ module.exports = app => {
       if (!post) {
         this.ctx.throw(404, 'post not found');
       }
-      if (post.user_id != user_id) {
+      if (post.user_id !== user_id) {
         this.ctx.throw(403, 'not allowed to modify others post');
       }
       return yield post.update(updates);
